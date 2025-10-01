@@ -32,7 +32,7 @@ export class AuthService {
     const token = localStorage.getItem('token');
     console.log(token);
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    return this.http.get<ProfileResponse>('http://localhost:8080/profile', { headers });
+    return this.http.get<ProfileResponse>(`${this.apiUrl}/profile`, { headers });
   }
 
 }
