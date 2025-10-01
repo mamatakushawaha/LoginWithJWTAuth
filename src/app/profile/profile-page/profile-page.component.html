@@ -1,0 +1,39 @@
+<div class="profile-container" *ngIf="profile">
+  <div class="profile-card">
+    <!-- Header with gradient -->
+    <div class="profile-header">
+      <div class="profile-avatar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="profile-content">
+      <!-- Welcome Message -->
+      <h2 class="profile-welcome">Welcome, {{ profile.username }}</h2>
+
+      <!-- Profile Details -->
+      <div class="profile-details">
+        <!-- Email -->
+        <div class="detail-card">
+          <div class="detail-icon email-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+            </svg>
+          </div>
+          <div class="detail-info">
+            <p class="detail-label">Email</p>
+            <p class="detail-value">{{ profile.email }}</p>
+          </div>
+        </div>
+
+       
+        
+      </div>
+    </div>
+  </div>
+</div>

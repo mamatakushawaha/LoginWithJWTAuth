@@ -1,0 +1,43 @@
+
+<div class="login-container">
+    <div class="login-header">
+        <h1>Welcome </h1>
+        <p>Please Sign Up to your account</p>
+    </div>
+
+    <form class="login-form" id="loginForm" #loginForm="ngForm" (submit)="submitRegister(loginForm)"> 
+       <div class="form-group">
+            <label class="form-label">Username</label>
+            <input type="text" id="username" name="username" [(ngModel)]="username" class="form-input"
+                placeholder="Enter your name" required>
+
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" id="email" name="email" [(ngModel)]="email" class="form-input"
+                placeholder="Enter your email" required>
+
+        </div>
+
+        <div class="form-group">
+            <label  class="form-label">Password</label>
+            <div >
+                <input type="password" id="password" name="password" [(ngModel)]= "password" class="form-input"
+                    placeholder="Enter your password" required>
+
+            </div>
+
+        </div>
+
+
+
+        <button type="submit" class="login-button" id="loginButton">
+            Sign Up
+        </button>
+    </form>
+
+    <div class="login-footer">
+        <p>Already have an account? <a routerLink="/login">Login here</a></p>
+    </div>
+</div>
