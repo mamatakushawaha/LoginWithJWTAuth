@@ -30,9 +30,17 @@ export class AuthService {
 
   getUserProfile(): Observable<ProfileResponse> {
     const token = localStorage.getItem('token');
-    console.log(token);
+    // console.log(token);
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this.http.get<ProfileResponse>(`${this.apiUrl}/profile`, { headers });
+  }
+
+  isLoggedIn():boolean {
+    return !!localStorage.getItem('token');
+  }
+
+  logout(): void {
+    localStorage.removeItem('token');
   }
 
 }
