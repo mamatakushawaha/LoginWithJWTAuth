@@ -28,6 +28,7 @@ export class LoginPageComponent implements OnInit {
         console.log('User saved in DB:', res);
         alert('Login successful');
         localStorage.setItem('token',res.token);
+        localStorage.setItem('username',res.username);
         this.router.navigate(['/profile']);
       },
       error: (err) => {

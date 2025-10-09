@@ -35,12 +35,21 @@ export class AuthService {
     return this.http.get<ProfileResponse>(`${this.apiUrl}/profile`, { headers });
   }
 
+  getAllUsers(): Observable<any> {
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.get(`${this.apiUrl}/getAll`, { headers });
+  }
   isLoggedIn():boolean {
     return !!localStorage.getItem('token');
   }
 
   logout(): void {
     localStorage.removeItem('token');
+    localStorage.removeItem('username');
+  }
+   getUsername(): string | null {
+    return localStorage.getItem('username');
   }
 
 }
