@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService, ProfileResponse } from 'src/app/services/auth.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { AuthService, ProfileResponse } from 'src/app/services/auth.service';
 })
 export class ProfilePageComponent implements OnInit {
 profile:ProfileResponse | null=null;
-  constructor(private authservice:AuthService) { }
+  constructor(private authservice:AuthService,private router:Router) { }
 
   ngOnInit(): void {
     this.loadProfile();
@@ -26,6 +27,10 @@ profile:ProfileResponse | null=null;
       }
       }
     );
+  }
+  logout(){
+    this.authservice.logout();
+    this.router.navigate(['/login']);
   }
 
 }

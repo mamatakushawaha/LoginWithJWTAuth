@@ -14,7 +14,7 @@ export class AuthService {
   // private username='login';
   // private password='login123';
 
-  private apiUrl = 'http://localhost:8080';
+  private apiUrl = 'http://localhost:8080/user';
 
   constructor(private http: HttpClient) { }
   loginUser(userData: any): Observable<any> {
@@ -47,6 +47,7 @@ export class AuthService {
   logout(): void {
     localStorage.removeItem('token');
     localStorage.removeItem('username');
+    localStorage.removeItem('role');
   }
    getUsername(): string | null {
     return localStorage.getItem('username');
